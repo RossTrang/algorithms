@@ -5,11 +5,11 @@ function factorialize(num) {
   
   for (var i = 1; i < count; i++) { 
     num = num * i;                  // but num is always increasing
-  }
+  }									// using multiplication assignment // num *= i;
 */  
   
-  if (num === 0) {return 1;} else {num = num * factorialize(num-1);} //Using recursion
-  
+  if (num === 0) {return 1;} else {num *= factorialize(num-1);} //Using recursion
+
   return num;
 }
 
