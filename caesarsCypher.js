@@ -10,8 +10,8 @@ function rot13(str) { // LBH QVQ VG!
       
   for(var character in str) { 
     charCode = str.charCodeAt(character);       //console.log(charCode);
-        if (charCode >=65 && charCode <=77) {charCode = charCode + 13;}   
-          else if (charCode >=78 && charCode <=90) {charCode = charCode - 13;}   //console.log(charCode);
+        if (charCode >=65 && charCode <=77) {charCode += 13;}   //charCode = charCode + 13
+          else if (charCode >=78 && charCode <=90) {charCode -= 13;}   //console.log(charCode);
     decoded = (decoded + String.fromCharCode(charCode));     //console.log(decoded);
   }
     //console.log(decoded);
