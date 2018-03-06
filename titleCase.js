@@ -7,22 +7,21 @@ function titleCase(str) {
   
   str = str.toLowerCase();
   var strArray = str.split(" ");
-  //var capArray = [];
-
-  // capArray =
-  // strArray.map(capitalise); // elements undefined
-  // Array.from(strArray, capitalise); // elements undefined
-
-  //  function capitalise() {
+/*
       strArray.forEach(function(word, index) {
       capLetter = word.charAt(0).toUpperCase();
       word = word.replace(word.charAt(0), capLetter);
-      //capArray.push(word);
       strArray[index] = word;
       });
-  //  };
+*/
+// The following function uses cascading (chaining methods) to achieve the same result:
 
-  //str = capArray.join(" ");
+  strArray.forEach(function(word, index) {
+    strArray[index] = word.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  });
+
   str = strArray.join(" ");
   
   return str;
