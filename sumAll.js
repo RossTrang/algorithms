@@ -1,12 +1,20 @@
-// SumAll - take 2 integers and return the sum of the range inclusive
+var sumAll = function(...args) {
+  
+  var total = 0;
+  
+  for (var val in args) {
+  	if (typeof(args[val]) !== "number" || args[val] < 0) { return "ERROR" }
+  }
 
-function sumAll(arg1, arg2) {
-  total = 0;
-    for (i = arg1; i <= arg2; i++) {
-      total += i;
-    }
+  args.sort(function (a, b) {
+   	return a - b;
+  })
+
+  for (i = args[0]; i <= args[1]; i++) {
+     total += i;
+	}
+
   return total;
 }
 
-
-sumAll(1, 9)
+module.exports = sumAll
