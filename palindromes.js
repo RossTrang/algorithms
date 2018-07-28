@@ -1,20 +1,12 @@
-/*  https://www.freecodecamp.org/challenges/check-for-palindromes
-- convert str.toLowerCase
-- remove non-alphanumerics
-- create reversed string    // need to covert to array?
-- compare                   // use sort comparison feature? Need new array element
-*/
-function palindrome(str) {
-  
-  palStr = str.toLowerCase();
-  palStr = palStr.replace(/[\W\_]/g,""); // return palStr;
+var palindromes = function(str) {
+
+  palStr = str.toLowerCase().replace(/[\W\_]/g,"");
   palArray = palStr.split(''); // Array.from(palStr);
-  palArray.reverse();
-  revStr = palArray.join(''); // return revStr;
+  revStr = palArray.reverse().join('');
   
   if (palStr.localeCompare(revStr) === 0) return true;
   else return false;
 
 }
 
-palindrome("A man, a plan, a canal. _Panama");
+module.exports = palindromes

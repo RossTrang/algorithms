@@ -4,7 +4,7 @@
 // - alphanumerics need to shift 13 points A=N. non-alphanumerics should not be transformed
 // - UTF-16 values? A=65, B=66...M=77, N=78 need logic to wrap 2nd half of alphabet N=A (78=65)
 
-function rot13(str) { // LBH QVQ VG!
+function rot13(str) {
   
 	var decoded = '';
       
@@ -14,9 +14,10 @@ function rot13(str) { // LBH QVQ VG!
 		else if (charCode >=78 && charCode <=90) {charCode -= 13;}   //console.log(charCode);
 		decoded = (decoded + String.fromCharCode(charCode));     //console.log(decoded);
 	}
-	console.log(decoded);
+//	console.log(decoded);
 	return decoded;
 }
 
 // Change the inputs below to test
 rot13('SERR PBQR PNZC');
+rot13('LBH QVQ VG!')
